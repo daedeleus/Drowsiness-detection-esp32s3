@@ -1,0 +1,12 @@
+Completed
+- OpenCV model for detecting drowsiness 
+- Streaming video from ESP32 board to computer 
+- Integration with OpenCV model
+
+Planned
+- Integration with heart rate sensor to more accurately monitor drowsiness
+- Alertness estimation through website game
+
+Future Iterations
+- Accident detection using accelerometers sensors
+- Integration with in built onboard head unit of Vehicles

@@ -80,14 +80,10 @@ void u8g2_line(uint8_t a)
 }
 
 //graphics
-void u8g2_triangle(uint8_t a)
+void u8g2_triangle()
 {
-    uint16_t offset = a;
-    u8g2.drawStr( 0, 0, "drawTriangle");
-    u8g2.drawTriangle(14, 7, 45, 30, 10, 40);
-    u8g2.drawTriangle(14 + offset, 7 - offset, 45 + offset, 30 - offset, 57 + offset, 10 - offset);
-    u8g2.drawTriangle(57 + offset * 2, 10, 45 + offset * 2, 30, 86 + offset * 2, 53);
-    u8g2.drawTriangle(10 + offset, 40 + offset, 45 + offset, 30 + offset, 86 + offset, 53 + offset);
+    u8g2.drawStr( 0, 0, "Camera straming at 192.168.4.1");
+    u8g2.drawTriangle(19, 13, 45, 30, 10, 40);
 }
 
 uint8_t draw_state = 0;
@@ -255,7 +251,7 @@ void loop()
 {
     u8g2.clearBuffer();
     u8g2_prepare();
-    u8g2_triangle(draw_state & 7);
+    u8g2_triangle();
     u8g2.sendBuffer();
 
     // increase the state
