@@ -82,8 +82,10 @@ void u8g2_line(uint8_t a)
 //graphics
 void u8g2_triangle()
 {
-    u8g2.drawStr( 0, 0, "Camera straming at 192.168.4.1");
-    u8g2.drawTriangle(19, 13, 45, 30, 10, 40);
+    u8g2.drawStr( 0, 0, "Camera streaming at ");
+    u8g2.drawStr( 0, 10, "192.168.4.1");
+
+    u8g2.drawTriangle(20, 25, 45, 35, 20, 45);
 }
 
 uint8_t draw_state = 0;
