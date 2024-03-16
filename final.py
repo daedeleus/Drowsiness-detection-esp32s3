@@ -5,6 +5,7 @@ import dlib
 import cv2
 import requests
 
+import winsound
 
 URL = "http://192.168.4.1"
 AWB = True
@@ -59,6 +60,9 @@ predict = dlib.shape_predictor("models/shape_predictor_68_face_landmarks.dat")# 
 cap=cv2.VideoCapture(URL + ":81/stream")
 flag=0
 
+frequency = 2500  # Set Frequency To 2500 Hertz
+duration = 1000  # Set Duration To 1000 ms == 1 second
+
 while True:
 	ret, frame=cap.read()
 	frame = imutils.resize(frame, width=450)
@@ -80,6 +84,7 @@ while True:
 			flag += 1
 			print (flag)
 			if flag >= frame_check:
+				winsound.Beep(frequency, duration)
 				cv2.putText(frame, "****************ALERT!****************", (10, 30),
 					cv2.FONT_HERSHEY_SIMPLEX, 0.7, (0, 0, 255), 2)
 				cv2.putText(frame, "****************ALERT!****************", (10,325),
